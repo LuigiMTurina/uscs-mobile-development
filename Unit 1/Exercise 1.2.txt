@@ -1,0 +1,273 @@
+1)
+fun f1(p: Double, isMember: Boolean): Double {
+    val d = if (isMember) {
+        if (p > 100) {
+            0.20
+        } else {
+            0.10
+        }
+    } else {
+        if (p > 100) {
+            0.05
+        } else {
+            0.0
+        }
+    }
+    return p * (1 - d)
+}
+
+
+fun main() {
+    
+    val p = 150.0
+    val isMember = false
+    println("Answer: " + f1(p, isMember))     
+}
+
+
+2)
+fun main() {
+    val w = 7.0
+    val isExpress = true
+    println( "Answer: " + calc(w, isExpress))
+}
+
+
+fun calc(w: Double, isExpress: Boolean): Double {
+    val cost = if (isExpress) {
+        if (w <= 5) {
+            50.0
+        } else {
+            100.0
+        } 
+      
+    } else {
+        if (w <= 5) {
+            20.0
+        } else {
+            40.0
+        }
+    }
+    return cost;
+}
+
+
+3) 
+fun gResp(w: Int): String {
+    return when (w) {
+        1 -> "A"
+        2 -> "B"
+        3 -> "K"
+        else -> "Oi"
+    }
+}
+
+fun main() {
+    val list = arrayOf(1, 2, 3, 4)
+    var i = 0;
+    
+    print("Answer: ")
+    while (i < list.size) {
+        val opt = list[i]
+        print(gResp(opt) + ", ")
+        i++
+    }
+    
+   
+}
+
+
+4)
+fun gResp(w: Int) {
+    return when(w) {
+        1 -> print("SCS ")
+        2 -> print("SBC ")
+        3 -> print("SA ")
+        else -> print("E ")
+    }
+}
+
+fun main() {
+    val list = arrayOf(1, 2, 3, 4)
+    var i = 0
+    
+    print("Answer: ")
+    while(i < list.size) {
+        if(i % 2 == 0) {
+            val opt = list[i]
+            gResp(opt)
+        }
+        i++
+    }
+}
+
+
+5)
+fun gResp(w: Int): String {
+    return when(w) {
+        0, 1    -> "A"
+        4, 5, 6 -> "B"
+        else    -> "X"
+    }
+}
+
+fun main() {
+    val list = arrayOf(1, 2, 3, 4, 5, 6, 7)
+    var i = 0
+   
+    print("Answer: ")
+    while(i < list.size) {
+        if(i % 2 == 0) {
+            val opt = list[i]
+            print(gResp(opt) + " ")
+        }
+        i++
+    }
+}
+
+
+6) 
+fun gResp(w: Int): String {
+    return when(w) {
+        in 1..4 -> "W"
+        in 0..8 -> "R"
+        else    -> "U"
+    }
+}
+
+fun main() {
+    val list = arrayOf(1, 2, 3, 4, 5, 6, 7)
+    var i = 0
+   
+    print("Answer: ")
+    while(i < list.size) {
+        if(i % 2 == 0) {
+            val opt = list[i]
+            print(gResp(opt) + " ")
+        }
+        i++
+    }
+}
+
+
+7)
+fun main() {
+    val list = arrayOf(1, 2, 3, 4, 5, 6, 7)
+    var i = 0; var w = 0
+    
+    while(i < list.size) {
+        if(i % 2 == 1) 
+            w = 1
+        else
+        	w = 4
+        
+        i++
+    }
+    
+    print("Answer: " + when( w ) {
+        1 -> "um"
+        2 -> "dois"
+        3 -> "três"
+        4 -> "quatro"
+        else -> "outro"
+    })
+}
+
+
+8)
+fun main() {
+    var x = 0
+    var y = 5
+    
+    while(x < 5) {
+        y += x
+        x++
+    }
+    
+    do {
+        y -= 1
+    } while(y > 10)
+    
+    val r: Int = x + y
+    println("Answer: $r")
+}
+
+
+9)
+fun main() {
+    val lista = arrayOf(1, 2, 3, 4, 5)
+    var r = 0
+    
+    for(n in lista) {
+        if(n % 2 == 0) {
+            r += n
+        }
+    }
+    
+    for(i in 1..5 step 2) {
+        r *=  i
+    }
+    
+    println("Answer: $r")
+}
+
+
+10)
+fun main() {
+    val lista = arrayOf(1, 2, 3, 4)
+    var r = 1
+    
+    for(n in lista) {
+        if(n % 2 != 0) {
+            continue;
+        }
+        
+        r += n
+    }
+    
+    for(i in 1..r step 2) {
+        if(i % 4 == 0) {
+            continue
+        }
+        
+        r += i
+    }
+    
+    println("Answer: $r")
+}
+
+
+11)
+fun main() {
+    var r = 0
+    val a = readLine()?.toIntOrNull();
+    val b = readLine()?.toIntOrNull();
+    
+    if(a != null && b != null) {
+        for(i in a..b) {
+            r += (i + a%i + b%i)
+        }
+    }
+    
+    println("Answer: $r")
+}
+
+
+12)
+fun main() {
+    var r = 0
+    val a = readLine()?.toIntOrNull();
+    val b = readLine()?.toIntOrNull();
+    
+    if(a != null && b != null && a < b) {
+        for(i in a..b) {
+            if(i % 2 == 0) {
+                r += (i * 2 + a / (i + 1) + b / (i + 2))
+            } else {
+                r += (i + a % (i + 1) + b % (i + 2))
+            }
+        }
+    }
+    
+    println("Answer: $r")
+}
