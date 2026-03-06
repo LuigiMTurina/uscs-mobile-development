@@ -1,0 +1,7 @@
+# Configurações do IntelliJ
+.idea/
+*.iml
+
+# Arquivos compilados
+out/
+build/
